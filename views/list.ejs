@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h1>Todo List</h1>
+    </div>
+    <div class="box">
+      <% for(var i = 0 ; i < taskejs.length ; i++) { %>
+      <div class="item">
+        <input type="checkbox" />
+        <p><%= taskejs[i] %></p>
+      </div>
+      <% } %>
+
+      <form action="/" method="POST">
+        <input type="text" name="task" placeholder="Enter the task" required />
+        <button type="submit" class="btn">+</button>
+      </form>
+    </div>
+  </body>
+</html>
