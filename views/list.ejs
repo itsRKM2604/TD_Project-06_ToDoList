@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/6bb35d50c1.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="box">
@@ -13,14 +17,28 @@
     <div class="box">
       <% for(var i = 0 ; i < taskejs.length ; i++) { %>
       <div class="item">
-        <input type="checkbox" />
-        <p><%= taskejs[i] %></p>
+        <p name="<%= taskejs[i].id %>">
+          <%= taskejs[i].text %>
+        </p>
+        <div class="options">
+          <form action="/edit/<%= taskejs[i].id %>" method="POST">
+            <button class="btn">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+          </form>
+
+          <form action="/delete/<%= taskejs[i].id %>" method="POST">
+            <button class="btn"><i class="fa-solid fa-trash"></i></button>
+          </form>
+        </div>
       </div>
       <% } %>
 
       <form action="/" method="POST">
         <input type="text" name="task" placeholder="Enter the task" required />
-        <button type="submit" class="btn">+</button>
+        <button type="submit" class="btn">
+          <i class="fa-solid fa-plus"></i>
+        </button>
       </form>
     </div>
   </body>
