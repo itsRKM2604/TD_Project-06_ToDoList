@@ -25,7 +25,6 @@ app.post("/", (req, res) => {
     }
   });
   if (!status) {
-    console.log({ taskid, task });
     items.push({ id: taskid++, text: task });
   }
   res.redirect("/");
