@@ -1,6 +1,15 @@
+:root {
+  --primary-color: #97e456;
+  --secondary-color: #eee;
+}
+
 body {
-  background-color: #e4e9fd;
-  background-image: -webkit-linear-gradient(65deg, #a683e3 50%, #e4e4e4 50%);
+  background-color: var(--secondary-color);
+  background-image: -webkit-linear-gradient(
+    65deg,
+    var(--primary-color) 50%,
+    var(--secondary-color) 50%
+  );
   min-height: 1000px;
   font-family: "helvetica neue", sans-serif;
 }
@@ -9,6 +18,7 @@ h1 {
   color: #000;
   padding: 10px;
   text-align: center;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .box {
@@ -20,7 +30,7 @@ h1 {
 }
 
 #heading {
-  background-color: #a683e3;
+  background-color: var(--primary-color);
   text-align: center;
 }
 
@@ -29,6 +39,8 @@ h1 {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f1f1f1;
+  justify-content: space-between;
+  padding-right: 0.6rem;
 }
 
 .item:last-child {
@@ -37,7 +49,7 @@ h1 {
 
 input:checked + p {
   text-decoration: line-through;
-  text-decoration-color: #a683e3;
+  text-decoration-color: var(--primary-color);
 }
 
 input[type="checkbox"] {
@@ -62,7 +74,7 @@ button {
   width: 50px;
   border-radius: 50%;
   border-color: transparent;
-  background-color: #a683e3;
+  background-color: var(--primary-color);
   color: white;
   font-size: 30px;
   padding-bottom: 6px;
@@ -82,7 +94,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
   outline: none;
-  box-shadow: inset 0 -3px 0 0 #a683e3;
+  box-shadow: inset 0 -3px 0 0 var(--primary-color);
   margin-bottom: 5px;
 }
 
@@ -95,4 +107,22 @@ footer {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+button i {
+  color: #00204a;
+  font-size: 80%;
+}
+
+button:hover {
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.options {
+  display: flex;
 }
